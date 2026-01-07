@@ -1,100 +1,91 @@
-# Mini-Instagram-Fullstack
-📸 Mini Instagram – Fullstack (API + Templates)
+# 📸 Mini-Instagram-Fullstack
+### Mini Instagram – Fullstack (API + Templates)
 
-Mini Instagram — bu Instagram’ga o‘xshash to‘liq backend + frontend (templates) loyihasi.
-Loyiha portfolio, intervyu va real backend tajriba uchun mo‘ljallangan.
+Mini Instagram — bu **Instagram’ga o‘xshash to‘liq backend + frontend (Django Templates)** loyihasi.  
+Loyiha **portfolio**, **intervyu** va **real backend tajriba** uchun mo‘ljallangan.
 
-🚀 Features
-👤 Authentication & Profile
+---
 
-User registration & login
+## 🚀 Features
 
-JWT authentication (access & refresh)
+### 👤 Authentication & Profile
+- User registration & login  
+- JWT authentication (access & refresh)  
+- User profile (avatar, bio)  
+- Public / Private profile  
+- Follow request (private account)  
 
-User profile (avatar, bio)
+---
 
-Public / Private profile
+### ➕ Follow System
+- Follow / Unfollow user  
+- Followers & Following list  
+- Follow request (accept / reject)  
 
-Follow request (private account)
+---
 
-➕ Follow System
+### 🖼 Posts
+- Create post with image  
+- Update & delete own post  
+- Feed (follow qilingan userlar postlari)  
+- Post detail view  
 
-Follow / Unfollow user
+---
 
-Followers & Following list
+### ❤️ Like System
+- Like / Unlike post  
+- One user → one like per post  
+- Like count  
 
-Follow request (accept / reject)
+---
 
-🖼 Posts
+### 💬 Comment System
+- Add comment  
+- View comments  
+- Comment owner permission  
 
-Create post with image
+---
 
-Update & delete own post
+### ⏳ Stories
+- Upload stories (image/video)  
+- Auto-expire after 24 hours  
+- View stories of followed users  
 
-Feed (follow qilgan userlar postlari)
+---
 
-Post detail view
+### 🔔 Notifications
+- Follow notification  
+- Like notification  
+- Comment notification  
+- Read / unread status  
 
-❤️ Like System
+---
 
-Like / Unlike post
+### 💬 Chat (Basic DM)
+- Send message  
+- Conversation list  
+- Message history  
 
-One user → one like per post
+---
 
-Like count
+### 🔍 Search
+- Search users by username  
+- Search posts by caption  
 
-💬 Comment System
+---
 
-Add comment
+### 📊 Statistics
+- Likes count  
+- Comments count  
+- Followers / following count  
 
-View comments
+---
 
-Comment owner permission
+## 🧱 Full Project Structure (API + Templates)
 
-⏳ Stories
-
-Upload stories (image/video)
-
-Auto-expire after 24 hours
-
-View stories of followed users
-
-🔔 Notifications
-
-Follow notification
-
-Like notification
-
-Comment notification
-
-Read / unread status
-
-💬 Chat (Basic DM)
-
-Send message
-
-Conversation list
-
-Message history
-
-🔍 Search
-
-Search users by username
-
-Search posts by caption
-
-📊 Statistics
-
-Likes count
-
-Comments count
-
-Followers / following count
-
-🧱 FULL PROJECT STRUCTURE (API + TEMPLATES)
+```text
 mini_instagram/
 ├── manage.py
-│
 ├── core/
 │   ├── __init__.py
 │   ├── settings.py
@@ -104,102 +95,53 @@ mini_instagram/
 │
 ├── apps/
 │   ├── users/              # User, Profile, Follow
-│   │   ├── models.py
-│   │   ├── serializers.py
-│   │   ├── views.py
-│   │   ├── permissions.py
-│   │   └── urls.py
-│   │
 │   ├── posts/              # Posts & Stories
-│   │   ├── models.py
-│   │   ├── serializers.py
-│   │   ├── views.py
-│   │   └── urls.py
-│   │
 │   ├── interactions/       # Like, Comment
-│   │   ├── models.py
-│   │   ├── serializers.py
-│   │   ├── views.py
-│   │   └── urls.py
-│   │
 │   ├── notifications/      # Notifications
-│   │   ├── models.py
-│   │   ├── views.py
-│   │   └── urls.py
-│   │
 │   └── chat/               # Direct Messages
-│       ├── models.py
-│       ├── serializers.py
-│       ├── views.py
-│       └── urls.py
 │
 ├── templates/
 │   ├── base.html
-│   │
 │   ├── auth/
-│   │   ├── login.html
-│   │   └── register.html
-│   │
 │   ├── profile/
-│   │   ├── profile.html
-│   │   └── edit_profile.html
-│   │
 │   ├── posts/
-│   │   ├── feed.html
-│   │   ├── post_detail.html
-│   │   └── create_post.html
-│   │
 │   ├── stories/
-│   │   └── stories.html
-│   │
 │   ├── chat/
-│   │   ├── inbox.html
-│   │   └── chat_detail.html
-│   │
 │   └── notifications/
-│       └── notifications.html
 │
 ├── static/
 │   ├── css/
-│   │   └── style.css
 │   ├── js/
-│   │   └── main.js
 │   └── images/
 │
 ├── media/
-│
 ├── requirements.txt
 └── README.md
+## 🛠 Tech Stack
 
-🛠 Tech Stack
+- **Python**
+- **Django**
+- **Django REST Framework**
+- **JWT Authentication**
+- **PostgreSQL**
+- **Django Templates**
+- **HTML / CSS / JavaScript**
+- **Pillow** (image upload)
 
-Python
+---
 
-Django
+## 🔐 Permissions & Security
 
-Django REST Framework
+- JWT protected endpoints  
+- Owner-based permissions  
+- Private profile access control  
+- Secure follow system  
 
-JWT Authentication
+---
 
-PostgreSQL
+## 📌 API Endpoints (Example)
 
-Django Templates
-
-HTML / CSS / JavaScript
-
-Pillow (image upload)
-
-🔐 Permissions & Security
-
-JWT protected endpoints
-
-Owner-based permissions
-
-Private profile access control
-
-Secure follow system
-
-📌 API Endpoints (Example)
+```http
 POST   /api/auth/register/
 POST   /api/auth/login/
 
@@ -213,16 +155,18 @@ POST   /api/posts/{id}/comment/
 
 POST   /api/users/{id}/follow/
 POST   /api/users/{id}/unfollow/
+## ⚙️ Installation
 
-⚙️ Installation
+```bash
 git clone https://github.com/yourusername/mini-instagram.git
 cd mini-instagram
+
 python -m venv venv
 source venv/bin/activate
+
 pip install -r requirements.txt
 python manage.py migrate
 python manage.py runserver
-
 🎯 Project Goal
 
 Real-world Instagram clone logic
@@ -239,19 +183,34 @@ Artur
 Python Backend Developer
 Django | DRF | PostgreSQL
 
-🏆 Intervyuda aytadigan gap (tayyor 😎)
+🏆 Interview Pitch
 
 “Mini Instagram’ni Django REST API + Django Templates bilan qildim.
-Auth, follow system, post, like, comment, stories, notification va chat bor.”
+Auth, follow system, post, like, comment, stories, notification va chat mavjud.”
 
-Agar xohlasang keyingi bosqichda:
+🚀 Next Steps
 
-✅ 1-bosqich: project setup
+✅ Project setup
 
 ✅ CustomUser + JWT
 
-✅ base.html + login/register
+✅ Base template (base.html) + Login / Register
 
 ✅ Post upload
 
-✅ Like / Follow kodlari
+✅ Like / Follow system
+
+
+---
+
+### ✅ Natija
+Bu bo‘lim:
+- GitHub’da **toza va professional** ko‘rinadi  
+- Intervyuda **tayyor gap** sifatida ishlatiladi  
+- Portfolio’ni **kuchli qiladi**
+
+Agar xohlasang, keyingi qadamda:
+- `requirements.txt` ni to‘liq yozib beraman  
+- yoki **1-bosqich: project setup** ni real kod bilan boshlaymiz  
+
+👉 shunchaki **“mini instagram”** deb yoz 💪🔥
